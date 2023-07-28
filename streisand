@@ -142,28 +142,12 @@ function be_careful_friend() {
 # file from the inventories directory as the Ansible inventory.
 function local_provision() {
   echo "local provision."
-  be_careful_friend "
-LOCAL PROVISIONING WILL OVERWRITE CONFIGURATION ON **THIS** MACHINE.
-THE MACHINE YOU ARE CURRENTLY EXECUTING THIS SHELL SCRIPT ON.
-ARE YOU 100% SURE THAT YOU WISH TO CONTINUE?
-
-Please enter the word 'streisand' to continue: "
-
   run_genesis localhost.yml inventories/inventory-local-provision
 }
 
 function existing_server() {
   echo "existing server."
   read -r -p "What is the IP of the existing server: " SERVER_IP
-
-  be_careful_friend "
-THIS WILL OVERWRITE CONFIGURATION ON THE EXISTING SERVER.
-STREISAND ASSUMES $SERVER_IP IS A BRAND NEW UBUNTU INSTANCE AND WILL
-NOT PRESERVE EXISTING CONFIGURATION OR DATA.
-
-ARE YOU 100% SURE THAT YOU WISH TO CONTINUE?
-
-Please enter the word 'streisand' to continue: "
 
   # If ANSIBLE_SSH_USER is empty, default to root
   if [ -z "${ANSIBLE_SSH_USER}" ]; then
