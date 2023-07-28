@@ -141,6 +141,7 @@ function be_careful_friend() {
 # invoking ansible-playbook. It uses the `inventory-local-provision` inventory
 # file from the inventories directory as the Ansible inventory.
 function local_provision() {
+  echo "local provision."
   be_careful_friend "
 LOCAL PROVISIONING WILL OVERWRITE CONFIGURATION ON **THIS** MACHINE.
 THE MACHINE YOU ARE CURRENTLY EXECUTING THIS SHELL SCRIPT ON.
@@ -152,6 +153,7 @@ Please enter the word 'streisand' to continue: "
 }
 
 function existing_server() {
+  echo "existing server."
   read -r -p "What is the IP of the existing server: " SERVER_IP
 
   be_careful_friend "
