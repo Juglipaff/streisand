@@ -176,7 +176,7 @@ init_homedir
 # check_python
 check_ansible
 
-existing_server
+local_provision
 
 # Figure out which genesis role to invoke
 # read -r -p "Which provider are you using?
