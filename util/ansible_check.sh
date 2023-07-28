@@ -11,4 +11,5 @@ Streisand requires Ansible and it is not installed.
 Please see the README Installation section on Prerequisites"
     exit 1
   fi
+  echo "Ansible ok"
 }
